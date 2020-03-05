@@ -1,4 +1,4 @@
-var input=5
+var input=7
 
 
 for (let i = 0; i < input; i++) {
@@ -37,6 +37,34 @@ for (let i = 1; i <= input; i++) {
           }else if(j<input+i-1){
               star+="*"
           }
+    }
+    console.log(star)
+}
+
+console.log("-------------------")
+
+for (let i = 0; i < input; i++) {
+    let star=""
+    for (let j = 0; j < input; j++) {
+        if (i==0||i==input-1||j==0||j==input-1) {
+            star+="*"
+        }else{
+            star+=" "
+        }
+    }
+    console.log(star)
+}
+
+console.log("-------------------")
+
+for (let i = 0; i < input; i++) {
+    let star=""
+    for (let j = 0; j < input; j++) {
+        if (i==0||i==input-1||j==0||j==input-1||j==i||j==input-i-1) {
+            star+="*"
+        }else{
+            star+=" "
+        }
     }
     console.log(star)
 }
