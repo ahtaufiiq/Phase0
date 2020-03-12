@@ -1,84 +1,13 @@
-function kingIsInCheck(chessboard) {
-    var posisiRaja = [];
-    var posisiKuda = [];
-    for(i = 0; i < chessboard.length; i++){
-        for(j = 0; j < chessboard[i].length; j++){
-            if(chessboard[i][j] == '♔'){
-                posisiRaja.push(i);
-                posisiRaja.push(j);
-            }
-            if(chessboard[i][j] == '♞'){
-                posisiKuda.push(i);
-                posisiKuda.push(j);
-            }
-        }
-    }
-    var checkMate = false;
-    for(i = 0; i <= posisiKuda.length; i += 2){
-      if(posisiRaja[0] + 2 == posisiKuda[i] && posisiRaja[1] + 1 == posisiKuda[i+1]){
-      checkMate = true;
-      }
-      else if(posisiRaja[0] - 2 == posisiKuda[i] && posisiRaja[1] - 1 == posisiKuda[i+1]){
-        checkMate = true;
-      }
-      else if(posisiRaja[0] + 2 == posisiKuda[i] && posisiRaja[1] - 1 == posisiKuda[i+1]){
-        checkMate = true;
-      }
-      else if(posisiRaja[0] - 2 == posisiKuda[i] && posisiRaja[1] + 1 == posisiKuda[i+1]){
-        checkMate = true;
-      }
-      else if(posisiRaja[0] + 1 == posisiKuda[i] && posisiRaja[1] + 2 == posisiKuda[i+1]){
-        checkMate = true;
-      }
-      else if(posisiRaja[0] - 1 == posisiKuda[i] && posisiRaja[1] - 2 == posisiKuda[i+1]){
-        checkMate = true;
-      }
-      else if(posisiRaja[0] + 1 == posisiKuda[i] && posisiRaja[1] - 2 == posisiKuda[i+1]){
-        checkMate = true;
-      }
-      else if(posisiRaja[0] - 1 == posisiKuda[i] && posisiRaja[1] + 2 == posisiKuda[i+1]){
-        checkMate = true;
-      }
-    }
-    return checkMate
+function bandingkanAngka(angka1, angka2) {
+  // you can only write your code here!
+  if(angka1==angka2)
+    return -1
+  return angka2>angka1
 }
-let chessboard = [
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', '♞', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', '♞', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', '♔', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']];
-console.log(kingIsInCheck(chessboard)) //True
-chessboard = [
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', '', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', '♞', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', '♔', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']];
-console.log(kingIsInCheck(chessboard)) //False
-chessboard = [
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', '♞'],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', '', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', '♞', ' ', ' ', ' ', ' '],
-    ['♔', ' ', ' ', ' ', ' ', ' ', ' ', ' ']];
-console.log(kingIsInCheck(chessboard)) //False
-chessboard = [
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', '♔', ' ', ' '],
-    [' ', ' ', ' ', '♞', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-    [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']];
-console.log(kingIsInCheck(chessboard)) //True
+
+// TEST CASES
+console.log(bandingkanAngka(5, 8)); // true
+console.log(bandingkanAngka(5, 3)); // false
+console.log(bandingkanAngka(4, 4)); // -1
+console.log(bandingkanAngka(3, 3)); // -1
+console.log(bandingkanAngka(17, 2)); // false

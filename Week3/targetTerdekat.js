@@ -17,6 +17,7 @@ function targetTerdekat(arr) {
         }
     }
     return terdekat
+    
 }
   
   // TEST CASES

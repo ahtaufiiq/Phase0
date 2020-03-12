@@ -4,7 +4,8 @@ function balikKata(kata) {
         reverseString+=kata[i]
     }
     return reverseString
-  }
+}
+
   
   // TEST CASES
   console.log(balikKata('Hello World and Coders')); // sredoC dna dlroW olleH
